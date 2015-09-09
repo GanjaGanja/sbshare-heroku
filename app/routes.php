@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array(
+    'as' => 'home',
+    'uses' => 'IndexController@getIndex'
+));
+
+Route::controller('planets', 'PlanetsController');
+Route::controller('users', 'UsersController');
